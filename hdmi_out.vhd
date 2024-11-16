@@ -140,7 +140,8 @@ BEGIN
     -- Horizontal Synchronization (at the of column) & Active
     HORIZONTAL_SYNC:
     PROCESS (clk_25MHz)
-        CONSTANT BAND_WIDTH : INTEGER := FRAME_WIDTH / 6; -- Divisão em 6 faixas para transições suaves
+        -- Divide the screen in 6 strips for smooth transitions
+        CONSTANT BAND_WIDTH : INTEGER := FRAME_WIDTH / 6;
         CONSTANT H_OFFSET : INTEGER := H_PULSE_WIDTH + H_BACK_PORCH;
     BEGIN           
         -- Calculate color values based in horizontal position:
